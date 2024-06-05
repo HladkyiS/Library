@@ -2,7 +2,8 @@ from django.urls import path
 
 from catalog.views import (index,
                            FormatsList,
-                           AuthorsList,)
+                           AuthorsList,
+                           BooksList,)
 
 urlpatterns = [
     path("", index, name="index"),
@@ -15,6 +16,11 @@ urlpatterns = [
         "authors/",
         AuthorsList.as_view(),
         name="authors_list"
+    ),
+    path(
+        "books/",
+        BooksList.as_view(),
+        name="books_list"
     )
 ]
 

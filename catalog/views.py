@@ -33,3 +33,9 @@ class AuthorsList(generic.ListView):
     template_name = "catalog/authors_list.html"
     context_object_name = "authors"
 
+
+class BooksList(generic.ListView):
+    model = Book
+    template_name = "catalog/books_list.html"
+    context_object_name = "books"
+

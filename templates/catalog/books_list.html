@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Books</h1>
+
+  {% if books %}
+    <ul>
+      {% for book in books %}
+        <li>
+          {{ book.title }}
+          (format: {{ book.format.name }})
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}
