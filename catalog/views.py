@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic
 
 from catalog.models import Book, Author, Format
 
@@ -19,3 +20,10 @@ def index(request):
         "catalog/index.html",
         context=context
     )
+
+
+class FormatsList(generic.ListView):
+    model = Format
+    template_name = "catalog/formats_list.html"
+    context_object_name = "formats"
+
