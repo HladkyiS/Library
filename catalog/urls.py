@@ -1,7 +1,9 @@
 from django.urls import path
 
-urlpatterns = [
+from catalog.views import index
 
+urlpatterns = [
+    path("", index, name="index")
 ]
 
 app_name = "catalog"
