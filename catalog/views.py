@@ -27,3 +27,9 @@ class FormatsList(generic.ListView):
     template_name = "catalog/formats_list.html"
     context_object_name = "formats"
 
+
+class AuthorsList(generic.ListView):
+    model = Author
+    template_name = "catalog/authors_list.html"
+    context_object_name = "authors"
+
