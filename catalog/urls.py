@@ -3,7 +3,8 @@ from django.urls import path
 from catalog.views import (index,
                            FormatsList,
                            AuthorsList,
-                           BooksList,)
+                           BooksList,
+                           BookDetailView,)
 
 urlpatterns = [
     path("", index, name="index"),
@@ -21,8 +22,12 @@ urlpatterns = [
         "books/",
         BooksList.as_view(),
         name="books_list"
+    ),
+    path(
+        "books/<int:pk>",
+        BookDetailView.as_view(),
+        name="book_detail"
     )
 ]
 
 app_name = "catalog"
-
