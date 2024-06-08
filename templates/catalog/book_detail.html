@@ -10,7 +10,7 @@
   <ul>
     {% for author in book.authors.all %}
       <li>
-        {{ author.first_name }} {{ author.last_name }}
+        <a href="{% url 'catalog:author_detail' pk=author.id %}">{{ author.first_name }} {{ author.last_name }}</a>
         {% if author.pseudonym %}
           (Pseudonym: {{ author.pseudonym }})
         {% endif %}

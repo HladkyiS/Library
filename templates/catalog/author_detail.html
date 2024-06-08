@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{ author.first_name }} {{ author.last_name }}</h1>
+
+  {% if author.pseudonym %}
+    <p>
+      Pseudonym: {{ author.pseudonym }}
+    </p>
+  {% endif %}
+
+  <p>Books:</p>
+  {% if author.books.all %}
+    <ul>
+      {% for book in author.books.all %}
+        <li>
+          <a href="{% url 'catalog:book_detail' pk=book.id %}">{{ book.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}

@@ -46,3 +46,10 @@ class BookDetailView(generic.DetailView):
     template_name = "catalog/book_detail.html"
     context_object_name = "book"
     queryset = Book.objects.select_related("format").prefetch_related("authors")
+
+
+class AuthorDetailView(generic.DetailView):
+    model = Author
+    template_name = "catalog/author_detail.html"
+    context_object_name = "author"
+    queryset = Author.objects.prefetch_related("books")

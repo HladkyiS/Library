@@ -4,7 +4,8 @@ from catalog.views import (index,
                            FormatsList,
                            AuthorsList,
                            BooksList,
-                           BookDetailView,)
+                           BookDetailView,
+                           AuthorDetailView,)
 
 urlpatterns = [
     path("", index, name="index"),
@@ -27,6 +28,11 @@ urlpatterns = [
         "books/<int:pk>",
         BookDetailView.as_view(),
         name="book_detail"
+    ),
+    path(
+        "authors/<int:pk>",
+        AuthorDetailView.as_view(),
+        name="author_detail"
     )
 ]
 
